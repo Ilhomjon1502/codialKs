@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ixlosbek, Islombek & Shukrona — Codial kompyuter savodxonligi</title>
+  <meta name="description" content="Ixlosbek, Islombek va Shukrona — Codial akademiyasida kompyuter savodxonligi va sun'iy intellekt bilan ishlashni o'rganayotgan o'quvchilar.">
+  <link rel="icon" type="image/png" href="assets/codial-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Yuklanish ekrani -->
+  <div class="preloader" id="preloader">
+    <div class="boot">
+      <div class="boot-line"><span class="prompt">$</span> codial --start</div>
+      <div class="boot-line delay-1">✔ Kompyuter yoqildi</div>
+      <div class="boot-line delay-2">✔ AI yordamchi ulandi</div>
+      <div class="boot-line delay-3">✔ Kayfiyat: <b>a'lo</b> 🚀</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Fon: harakatlanuvchi gradient va tarmoq -->
+  <div class="bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <canvas id="network"></canvas>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#bosh" class="brand" aria-label="Bosh sahifa">
+        <img src="assets/codial-logo.png" alt="Codial" class="logo logo-light">
+        <img src="assets/codial-logo-white.png" alt="Codial" class="logo logo-dark">
+        <span class="brand-tag">KS kursi</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#jamoa">Jamoa</a>
+        <a href="#kurs">Kurs dasturi</a>
+        <a href="#ai">AI</a>
+        <a href="#codial">Codial</a>
+        <a href="#aloqa">Aloqa</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Mavzuni almashtirish">
+          <span class="sun">☀️</span><span class="moon">🌙</span>
+        </button>
+        <a href="#aloqa" class="btn btn-primary btn-sm hide-sm">Bog'lanish</a>
+        <button class="burger" id="burger" aria-label="Menyu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="bosh">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="badge reveal"><span class="dot"></span> Codial akademiyasi · Kompyuter savodxonligi</span>
+          <h1 class="reveal">
+            Biz <span class="grad">kompyuterni</span> o'rganamiz,<br>
+            <span class="typed-wrap">bugun — <span class="typed" id="typed">Word</span><span class="caret">|</span></span>
+          </h1>
+          <p class="lead reveal">
+            Salom! Biz — <b>Ixlosbek</b>, <b>Islombek</b> va <b>Shukrona</b>. Ustozlarimiz bilan Codial'da kompyuter savodxonligi
+            va sun'iy intellektdan to'g'ri foydalanishni o'rganishni boshladik. Bu sayt — bizning IT yo'limizning birinchi sahifasi!
+          </p>
+          <div class="hero-btns reveal">
+            <a href="#kurs" class="btn btn-primary">Kurs dasturi <span class="arrow">→</span></a>
+            <a href="#aloqa" class="btn btn-ghost">📞 Bog'lanish</a>
+          </div>
+          <div class="stats reveal">
+            <div class="stat"><b data-count="12">0</b><span>ta mavzu</span></div>
+            <div class="stat"><b data-count="3">0</b><span>o'quvchi</span></div>
+            <div class="stat"><b>∞</b><span>qiziqish</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="photo-card tilt">
+            <img src="assets/jamoa.webp" alt="Ixlosbek, ustoz Ilhomjon va Islombek Codial xonasida">
+            <div class="photo-caption">Codial jamoasi 💙💚</div>
+          </div>
+          <div class="chip chip-1">🤖 AI yordamchi</div>
+          <div class="chip chip-2">📊 Excel</div>
+          <div class="chip chip-3">🎨 Canva</div>
+          <div class="terminal">
+            <div class="term-head"><i></i><i></i><i></i><span>dars.js</span></div>
+            <pre class="term-body" id="terminal"></pre>
+          </div>
+        </div>
+      </div>
+      <a href="#jamoa" class="scroll-hint" aria-label="Pastga"><span></span></a>
+    </section>
+
+    <!-- Yuguruvchi lenta -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>💻 Kompyuter</span><span>🌐 Internet</span><span>📝 Word</span><span>📊 Excel</span><span>🎞️ PowerPoint</span><span>🎨 Canva</span><span>📄 Google Docs</span><span>📈 Google Sheets</span><span>🗳️ Google Forms</span><span>🤖 Sun'iy intellekt</span>
+        <span>💻 Kompyuter</span><span>🌐 Internet</span><span>📝 Word</span><span>📊 Excel</span><span>🎞️ PowerPoint</span><span>🎨 Canva</span><span>📄 Google Docs</span><span>📈 Google Sheets</span><span>🗳️ Google Forms</span><span>🤖 Sun'iy intellekt</span>
+      </div>
+    </div>
+
+    <!-- JAMOA -->
+    <section class="section" id="jamoa">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Jamoa</span>
+          <h2>Biz kimmiz?</h2>
+          <p>Uch o'quvchi, bitta ustoz va katta orzular.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="person reveal tilt">
+            <div class="avatar av-blue"><span>🛡️</span></div>
+            <h3>Ixlosbek</h3>
+            <p class="role">15 yosh · 42-maktab, Farg'ona</p>
+            <ul class="facts">
+              <li><span>🛡️</span> Kiberxavfsizlikka qiziqadi</li>
+              <li><span>➗</span> Maktabda eng yoqqan fan — matematika</li>
+              <li><span>📈</span> Maqsad: iqtisodiyot bo'yicha mutaxassis bo'lish</li>
+            </ul>
+            <div class="tags"><span>#kiberxavfsizlik</span><span>#matematika</span><span>#iqtisod</span></div>
+          </article>
+
+          <article class="person reveal tilt">
+            <div class="avatar av-green"><span>👨‍💻</span></div>
+            <h3>Islombek</h3>
+            <p class="role">11 yosh · 9-maktab, Farg'ona</p>
+            <ul class="facts">
+              <li><span>👨‍💻</span> Dasturlashga qiziqadi</li>
+              <li><span>🏥</span> Dadasi tibbiyotdagi DMED loyihasida ishlaydi</li>
+              <li><span>🤝</span> Maqsad: kompyuterni o'rganib, dadasiga yordam berish</li>
+            </ul>
+            <div class="tags"><span>#dasturlash</span><span>#DMED</span><span>#yordam</span></div>
+          </article>
+
+          <article class="person reveal tilt">
+            <span class="new-badge">Yangi ✨</span>
+            <div class="avatar av-teal"><span>🌍</span></div>
+            <h3>Shukrona</h3>
+            <p class="role">15 yosh · 28-maktab, Farg'ona</p>
+            <ul class="facts">
+              <li><span>🗣️</span> Eng qiziqqan fani — ingliz tili</li>
+              <li><span>🧭</span> IT sohasida o'z yo'nalishini tanlamoqchi</li>
+              <li><span>🤝</span> Guruhimizga yangi qo'shildi</li>
+            </ul>
+            <div class="tags"><span>#ingliztili</span><span>#IT</span><span>#yo'nalish</span></div>
+          </article>
+
+          <article class="person mentor reveal tilt">
+            <div class="avatar av-orange"><span>🎓</span></div>
+            <h3>Ilhomjon Ibragimov</h3>
+            <p class="role">Ustoz · Codial menejeri va mentori</p>
+            <ul class="facts">
+              <li><span>⭐</span> 6+ yillik ta'lim va dasturlash tajribasi</li>
+              <li><span>🎓</span> Bakalavr va magistr darajasi</li>
+              <li><span>💡</span> Bolalarga IT'ni oson va qiziqarli o'rgatadi</li>
+            </ul>
+            <div class="tags"><span>#mentor</span><span>#codial</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KURS DASTURI -->
+    <section class="section section-tint" id="kurs">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kurs dasturi</span>
+          <h2>12 qadamda kompyuter savodxonligi</h2>
+          <p>Har bir mavzuni amaliyot va AI yordamida o'rganamiz. Kartani bosib, nimalar o'rganilishini ko'ring.</p>
+        </div>
+
+        <div class="course-progress reveal">
+          <div class="cp-bar"><div class="cp-fill" id="cpFill"></div></div>
+          <span class="cp-label" id="cpLabel">Boshlang'ich nuqta 🚀</span>
+        </div>
+
+        <div class="lessons" id="lessons"></div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="section" id="ai">
+      <div class="container ai-grid">
+        <div class="reveal">
+          <span class="eyebrow">Sun'iy intellekt</span>
+          <h2>AI — har darsdagi yordamchimiz</h2>
+          <p class="muted">
+            Bu kursning o'ziga xosligi: biz dasturlarni o'rganish bilan birga sun'iy intellektdan
+            to'g'ri va xavfsiz foydalanishni ham o'rganamiz.
+          </p>
+          <ul class="ai-list">
+            <li><b>✍️ To'g'ri savol berish</b> — AI'ga aniq topshiriq yozishni o'rganamiz.</li>
+            <li><b>📊 Formulalar va jadvallar</b> — Excel va Sheets'da AI bilan tezroq ishlaymiz.</li>
+            <li><b>🎨 G'oya va dizayn</b> — taqdimot va Canva uchun g'oyalar topamiz.</li>
+            <li><b>🛡️ Xavfsizlik</b> — AI javobini tekshirish va shaxsiy ma'lumotni himoya qilish.</li>
+          </ul>
+        </div>
+        <div class="chat reveal">
+          <div class="chat-head"><span class="pulse"></span> AI yordamchi</div>
+          <div class="chat-body" id="chatBody"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODIAL -->
+    <section class="section section-tint" id="codial">
+      <div class="container codial-grid">
+        <div class="codial-visual reveal tilt">
+          <img src="assets/codial-dark.webp" alt="Codial logotipi">
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Qiziqqanlar uchun</span>
+          <h2>Codial akademiyasi</h2>
+          <p class="muted">
+            Codial — Farg'ona shahridagi IT akademiyasi. Bu yerda bolalar va o'smirlar kompyuter savodxonligi
+            va dasturlash asoslarini zamonaviy, qiziqarli muhitda o'rganadi. Biz ham shu yerda o'qiyapmiz!
+          </p>
+          <div class="features">
+            <div class="feature"><span>🧠</span><div><b>Mantiqiy fikrlash</b><small>Dasturlash asoslari va masala yechish</small></div></div>
+            <div class="feature"><span>🛠️</span><div><b>Amaliy loyihalar</b><small>Har bir mavzu real ish orqali</small></div></div>
+            <div class="feature"><span>👦</span><div><b>Yoshga mos dastur</b><small>Tushunarli va bosqichma-bosqich</small></div></div>
+            <div class="feature"><span>👨‍👩‍👦</span><div><b>Ota-onalarga hisobot</b><small>Natijalar muntazam ko'rsatiladi</small></div></div>
+          </div>
+          <div class="hero-btns">
+            <a href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener" class="btn btn-primary">Kursga yozilish <span class="arrow">→</span></a>
+            <a href="tel:+998996021502" class="btn btn-ghost">📞 +998 99 602 15 02</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALOQA -->
+    <section class="section" id="aloqa">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Aloqa</span>
+          <h2>Keling, tanishamiz! 👋</h2>
+          <p>Savol, taklif yoki shunchaki salom — bemalol yozing.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact reveal">
+            <div class="avatar av-blue sm"><span>🛡️</span></div>
+            <h3>Ixlosbek</h3>
+            <a class="c-row" href="tel:+998920931707"><span>📞</span> +998 92 093 17 07</a>
+            <a class="c-row" href="https://t.me/T_uzbbb" target="_blank" rel="noopener"><span>✈️</span> @T_uzbbb</a>
+            <button class="copy" data-copy="+998920931707">Raqamni nusxalash</button>
+          </div>
+          <div class="contact reveal">
+            <div class="avatar av-green sm"><span>👨‍💻</span></div>
+            <h3>Islombek</h3>
+            <a class="c-row" href="tel:+998912836611"><span>📞</span> +998 91 283 66 11</a>
+            <a class="c-row" href="https://t.me/ibrohimovislombek" target="_blank" rel="noopener"><span>✈️</span> @ibrohimovislombek</a>
+            <button class="copy" data-copy="+998912836611">Raqamni nusxalash</button>
+          </div>
+          <div class="contact reveal">
+            <div class="avatar av-teal sm"><span>🌍</span></div>
+            <h3>Shukrona</h3>
+            <a class="c-row" href="tel:+998993637688"><span>📞</span> +998 99 363 76 88</a>
+            <button class="copy" data-copy="+998993637688">Raqamni nusxalash</button>
+          </div>
+          <div class="contact reveal">
+            <div class="avatar av-orange sm"><span>🎓</span></div>
+            <h3>Codial · Ustoz Ilhomjon</h3>
+            <a class="c-row" href="tel:+998996021502"><span>📞</span> +998 99 602 15 02</a>
+            <a class="c-row" href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener"><span>✈️</span> @IlhomjonDeveloper</a>
+            <a class="c-row" href="https://ilhomjonibragimov.uz" target="_blank" rel="noopener"><span>🌐</span> ilhomjonibragimov.uz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="assets/codial-logo-white.png" alt="Codial" class="footer-logo">
+      <p>© <span id="year">2026</span> Ixlosbek, Islombek & Shukrona · Codial akademiyasi, Farg'ona</p>
+      <p class="small">HTML, CSS, JS va AI yordamida mehr bilan yaratildi 💙💚</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Yuqoriga">↑</button>
+  <div class="toast" id="toast">Nusxalandi ✔</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

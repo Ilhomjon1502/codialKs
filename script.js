@@ -2,7 +2,6 @@
 const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const icon = name => `<svg class="ic" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 
 function store(key, value) {
   try {
@@ -64,32 +63,32 @@ window.addEventListener("pointermove", e => {
 
 // ===== Kurs dasturi (Notion'dagi mavzular) =====
 const lessons = [
-  { ic: "monitor", t: "Kompyuter nima?", d: "Kompyuter qismlari, yoqish-o'chirish, sichqoncha va klaviatura bilan ishlash, fayl va papkalar." },
-  { ic: "globe", t: "Internet", d: "Brauzer, qidiruv tizimlari, foydali saytlar va internetda xavfsiz bo'lish qoidalari." },
-  { ic: "type", t: "Word 1", d: "Hujjat yaratish, matn yozish, shrift, o'lcham va rang bilan ishlash." },
-  { ic: "image", t: "Word 2", d: "Jadval, rasm, ro'yxatlar qo'shish va hujjatni chiroyli bezash." },
-  { ic: "table", t: "Excel 1", d: "Katakchalar, ustun va qatorlar, ma'lumot kiritish va oddiy hisob-kitoblar." },
-  { ic: "calculator", t: "Excel 2", d: "Formulalar (SUM, AVERAGE...), saralash, filtr va diagrammalar." },
-  { ic: "presentation", t: "PowerPoint 1", d: "Taqdimot yaratish, slaydlar, matn va rasm joylashtirish." },
-  { ic: "sparkles", t: "PowerPoint 2", d: "Animatsiya va o'tishlar, dizayn va chiqish qilish sirlari." },
-  { ic: "palette", t: "Canva", d: "Afisha, post va taklifnomalarni tayyor shablonlar bilan chiroyli dizayn qilish." },
-  { ic: "file-text", t: "Google Docs", d: "Onlayn hujjat, birgalikda tahrirlash va havola orqali ulashish." },
-  { ic: "sheet", t: "Google Sheets", d: "Onlayn jadvallar, formulalar va jamoa bilan birga ishlash." },
-  { ic: "list-checks", t: "Google Forms", d: "So'rovnoma va test yaratish, javoblarni yig'ish va tahlil qilish." },
+  { ic: "💻", t: "Kompyuter nima?", d: "Kompyuter qismlari, yoqish-o'chirish, sichqoncha va klaviatura bilan ishlash, fayl va papkalar." },
+  { ic: "🌐", t: "Internet", d: "Brauzer, qidiruv tizimlari, foydali saytlar va internetda xavfsiz bo'lish qoidalari." },
+  { ic: "📝", t: "Word 1", d: "Hujjat yaratish, matn yozish, shrift, o'lcham va rang bilan ishlash." },
+  { ic: "📄", t: "Word 2", d: "Jadval, rasm, ro'yxatlar qo'shish va hujjatni chiroyli bezash." },
+  { ic: "📊", t: "Excel 1", d: "Katakchalar, ustun va qatorlar, ma'lumot kiritish va oddiy hisob-kitoblar." },
+  { ic: "🧮", t: "Excel 2", d: "Formulalar (SUM, AVERAGE...), saralash, filtr va diagrammalar." },
+  { ic: "🎞️", t: "PowerPoint 1", d: "Taqdimot yaratish, slaydlar, matn va rasm joylashtirish." },
+  { ic: "✨", t: "PowerPoint 2", d: "Animatsiya va o'tishlar, dizayn va chiqish qilish sirlari." },
+  { ic: "🎨", t: "Canva", d: "Afisha, post va taklifnomalarni tayyor shablonlar bilan chiroyli dizayn qilish." },
+  { ic: "📃", t: "Google Docs", d: "Onlayn hujjat, birgalikda tahrirlash va havola orqali ulashish." },
+  { ic: "📈", t: "Google Sheets", d: "Onlayn jadvallar, formulalar va jamoa bilan birga ishlash." },
+  { ic: "🗳️", t: "Google Forms", d: "So'rovnoma va test yaratish, javoblarni yig'ish va tahlil qilish." },
 ];
 const lessonsEl = $("#lessons");
 lessonsEl.innerHTML = lessons.map((l, i) => `
   <button class="lesson reveal" style="transition-delay:${(i % 4) * 70}ms" aria-expanded="false">
-    <span class="check">${icon("check")}</span>
+    <span class="check">✓</span>
     <span class="num">${String(i + 1).padStart(2, "0")}</span>
-    <div class="l-ic">${icon(l.ic)}</div>
+    <div class="ic">${l.ic}</div>
     <h4>${l.t}</h4>
     <p class="desc">${l.d}</p>
   </button>`).join("");
 
 // Kartani bosish — ochiladi va "o'rganildi" deb belgilanadi
 const doneSet = new Set(JSON.parse(store("done") || "[]"));
-const labels = ["Boshlang'ich nuqta", "Zo'r boshlanish!", "Yarim yo'l bosildi", "Deyarli tayyor", "Kompyuter ustasi!"];
+const labels = ["Boshlang'ich nuqta 🚀", "Zo'r boshlanish! 👏", "Yarim yo'l bosildi 💪", "Deyarli tayyor 🔥", "Kompyuter ustasi! 🏆"];
 function updateProgress() {
   const pct = (doneSet.size / lessons.length) * 100;
   $("#cpFill").style.width = pct + "%";
@@ -160,7 +159,7 @@ const termLines = [
   '<span class="k">const</span> oquvchilar = [<span class="s">"Ixlosbek"</span>, <span class="s">"Islombek"</span>, <span class="s">"Shukrona"</span>];',
   '<span class="k">const</span> ustoz = <span class="s">"Ilhomjon"</span>;',
   'oquvchilar.forEach(o =&gt; organ(o, <span class="s">"AI"</span>));',
-  '<span class="g">✓ Kayfiyat: 100%</span>',
+  '<span class="g">✔ Kayfiyat: 100% 🚀</span>',
 ];
 const termEl = $("#terminal");
 function runTerminal() {
@@ -178,12 +177,12 @@ reduceMotion ? (termEl.innerHTML = termLines.join("\n")) : setTimeout(runTermina
 
 // ===== AI chat namoyishi =====
 const chat = [
-  ["user", "Excel'da ustundagi sonlarni qanday qo'shaman?"],
-  ["bot", "Oson! Katakchaga =SUM(A1:A10) deb yozing va Enter bosing."],
-  ["user", "Taqdimotim uchun 3 ta g'oya ber"],
-  ["bot", "1) Mening sevimli fanim 2) Kelajak kasbim 3) Farg'ona — go'zal shahrim"],
-  ["user", "Rahmat! Endi o'zim sinab ko'raman!"],
-  ["bot", "Barakalla! Eng yaxshi o'rganish — amaliyot!"],
+  ["user", "Excel'da ustundagi sonlarni qanday qo'shaman? 🤔"],
+  ["bot", "Oson! Katakchaga =SUM(A1:A10) deb yozing va Enter bosing ✅"],
+  ["user", "Taqdimotim uchun 3 ta g'oya ber 🎞️"],
+  ["bot", "1) Mening sevimli fanim 2) Kelajak kasbim 3) Farg'ona — go'zal shahrim 🌿"],
+  ["user", "Rahmat! Endi o'zim sinab ko'raman 💪"],
+  ["bot", "Barakalla! Eng yaxshi o'rganish — amaliyot 🚀"],
 ];
 const chatBody = $("#chatBody");
 let chatStarted = false;
@@ -229,10 +228,9 @@ if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
 
 // ===== Raqamni nusxalash =====
 const toast = $("#toast");
-const toastText = $("#toastText");
 $$(".copy").forEach(b => b.addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(b.dataset.copy); toastText.textContent = "Nusxalandi"; }
-  catch (e) { toastText.textContent = b.dataset.copy; }
+  try { await navigator.clipboard.writeText(b.dataset.copy); toast.textContent = "Nusxalandi ✔"; }
+  catch (e) { toast.textContent = b.dataset.copy; }
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 1800);
 }));

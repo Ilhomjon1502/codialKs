@@ -12,60 +12,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ikonkalar: Lucide (ISC litsenziya) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
-    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></symbol>
-    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></symbol>
-    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" /><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" /><path d="M17.599 6.5a3 3 0 0 0 .399-1.375" /><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" /><path d="M3.477 10.896a4 4 0 0 1 .585-.396" /><path d="M19.938 10.5a4 4 0 0 1 .585.396" /><path d="M6 18a4 4 0 0 1-1.967-.516" /><path d="M19.967 17.484A4 4 0 0 1 18 18" /></symbol>
-    <symbol id="i-calculator" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2" /><line x1="8" x2="16" y1="6" y2="6" /><line x1="16" x2="16" y1="14" y2="18" /><path d="M16 10h.01" /><path d="M12 10h.01" /><path d="M8 10h.01" /><path d="M12 14h.01" /><path d="M8 14h.01" /><path d="M12 18h.01" /><path d="M8 18h.01" /></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
-    <symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="m9 14 2 2 4-4" /></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></symbol>
-    <symbol id="i-compass" viewBox="0 0 24 24"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /><circle cx="12" cy="12" r="10" /></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
-    <symbol id="i-divide" viewBox="0 0 24 24"><circle cx="12" cy="6" r="1" /><line x1="5" x2="19" y1="12" y2="12" /><circle cx="12" cy="18" r="1" /></symbol>
-    <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></symbol>
-    <symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></symbol>
-    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></symbol>
-    <symbol id="i-heart-handshake" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" /><path d="m18 15-2-2" /><path d="m15 18-2-2" /></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></symbol>
-    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></symbol>
-    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" /></symbol>
-    <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></symbol>
-    <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></symbol>
-    <symbol id="i-list-checks" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4" /><path d="m3 7 2 2 4-4" /><path d="M13 6h8" /><path d="M13 12h8" /><path d="M13 18h8" /></symbol>
-    <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></symbol>
-    <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2" /><line x1="8" x2="16" y1="21" y2="21" /><line x1="12" x2="12" y1="17" y2="21" /></symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></symbol>
-    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" /></symbol>
-    <symbol id="i-pen-line" viewBox="0 0 24 24"><path d="M12 20h9" /><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" /></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
-    <symbol id="i-presentation" viewBox="0 0 24 24"><path d="M2 3h20" /><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" /><path d="m7 21 5-5 5 5" /></symbol>
-    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" /></symbol>
-    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></symbol>
-    <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></symbol>
-    <symbol id="i-sheet" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><line x1="3" x2="21" y1="9" y2="9" /><line x1="3" x2="21" y1="15" y2="15" /><line x1="9" x2="9" y1="9" y2="21" /><line x1="15" x2="15" y1="9" y2="21" /></symbol>
-    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></symbol>
-    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
-    <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M11 2v2" /><path d="M5 2v2" /><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" /><path d="M8 15a6 6 0 0 0 12 0v-3" /><circle cx="20" cy="10" r="2" /></symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></symbol>
-    <symbol id="i-table" viewBox="0 0 24 24"><path d="M12 3v18" /><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M3 15h18" /></symbol>
-    <symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></symbol>
-    <symbol id="i-type" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7" /><line x1="9" x2="15" y1="20" y2="20" /><line x1="12" x2="12" y1="4" y2="20" /></symbol>
-    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" x2="19" y1="8" y2="14" /><line x1="22" x2="16" y1="11" y2="11" /></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
-    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></symbol>
-  </svg>
   <!-- Yuklanish ekrani -->
   <div class="preloader" id="preloader">
     <div class="boot">
       <div class="boot-line"><span class="prompt">$</span> codial --start</div>
-      <div class="boot-line delay-1"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Kompyuter yoqildi</div>
-      <div class="boot-line delay-2"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> AI yordamchi ulandi</div>
-      <div class="boot-line delay-3"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Kayfiyat: <b>a'lo</b> <svg class="ic" aria-hidden="true"><use href="#i-rocket"/></svg></div>
+      <div class="boot-line delay-1">✔ Kompyuter yoqildi</div>
+      <div class="boot-line delay-2">✔ AI yordamchi ulandi</div>
+      <div class="boot-line delay-3">✔ Kayfiyat: <b>a'lo</b> 🚀</div>
     </div>
   </div>
 
@@ -96,7 +49,7 @@
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Mavzuni almashtirish">
-          <span class="sun"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></span><span class="moon"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg></span>
+          <span class="sun">☀️</span><span class="moon">🌙</span>
         </button>
         <a href="#aloqa" class="btn btn-primary btn-sm hide-sm">Bog'lanish</a>
         <button class="burger" id="burger" aria-label="Menyu"><span></span><span></span><span></span></button>
@@ -119,24 +72,24 @@
             va sun'iy intellektdan to'g'ri foydalanishni o'rganishni boshladik. Bu sayt — bizning IT yo'limizning birinchi sahifasi!
           </p>
           <div class="hero-btns reveal">
-            <a href="#kurs" class="btn btn-primary">Kurs dasturi <span class="arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-            <a href="#aloqa" class="btn btn-ghost"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Bog'lanish</a>
+            <a href="#kurs" class="btn btn-primary">Kurs dasturi <span class="arrow">→</span></a>
+            <a href="#aloqa" class="btn btn-ghost">📞 Bog'lanish</a>
           </div>
           <div class="stats reveal">
             <div class="stat"><b data-count="12">0</b><span>ta mavzu</span></div>
             <div class="stat"><b data-count="3">0</b><span>o'quvchi</span></div>
-            <div class="stat"><b class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-infinity"/></svg></b><span>qiziqish</span></div>
+            <div class="stat"><b>∞</b><span>qiziqish</span></div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
           <div class="photo-card tilt">
             <img src="assets/jamoa.webp" alt="Ixlosbek, ustoz Ilhomjon va Islombek Codial xonasida">
-            <div class="photo-caption"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg> Codial jamoasi</div>
+            <div class="photo-caption">Codial jamoasi 💙💚</div>
           </div>
-          <div class="chip chip-1"><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg> AI yordamchi</div>
-          <div class="chip chip-2"><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg> Excel</div>
-          <div class="chip chip-3"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg> Canva</div>
+          <div class="chip chip-1">🤖 AI yordamchi</div>
+          <div class="chip chip-2">📊 Excel</div>
+          <div class="chip chip-3">🎨 Canva</div>
           <div class="terminal">
             <div class="term-head"><i></i><i></i><i></i><span>dars.js</span></div>
             <pre class="term-body" id="terminal"></pre>
@@ -149,8 +102,8 @@
     <!-- Yuguruvchi lenta -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg>Kompyuter</span><span><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>Internet</span><span><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg>Word</span><span><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Excel</span><span><svg class="ic" aria-hidden="true"><use href="#i-presentation"/></svg>PowerPoint</span><span><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg>Canva</span><span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>Google Docs</span><span><svg class="ic" aria-hidden="true"><use href="#i-sheet"/></svg>Google Sheets</span><span><svg class="ic" aria-hidden="true"><use href="#i-list-checks"/></svg>Google Forms</span><span><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg>Sun'iy intellekt</span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg>Kompyuter</span><span><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>Internet</span><span><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg>Word</span><span><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Excel</span><span><svg class="ic" aria-hidden="true"><use href="#i-presentation"/></svg>PowerPoint</span><span><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg>Canva</span><span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>Google Docs</span><span><svg class="ic" aria-hidden="true"><use href="#i-sheet"/></svg>Google Sheets</span><span><svg class="ic" aria-hidden="true"><use href="#i-list-checks"/></svg>Google Forms</span><span><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg>Sun'iy intellekt</span>
+        <span>💻 Kompyuter</span><span>🌐 Internet</span><span>📝 Word</span><span>📊 Excel</span><span>🎞️ PowerPoint</span><span>🎨 Canva</span><span>📄 Google Docs</span><span>📈 Google Sheets</span><span>🗳️ Google Forms</span><span>🤖 Sun'iy intellekt</span>
+        <span>💻 Kompyuter</span><span>🌐 Internet</span><span>📝 Word</span><span>📊 Excel</span><span>🎞️ PowerPoint</span><span>🎨 Canva</span><span>📄 Google Docs</span><span>📈 Google Sheets</span><span>🗳️ Google Forms</span><span>🤖 Sun'iy intellekt</span>
       </div>
     </div>
 
@@ -165,50 +118,50 @@
 
         <div class="team-grid">
           <article class="person reveal tilt">
-            <div class="avatar av-blue"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg></div>
+            <div class="avatar av-blue"><span>🛡️</span></div>
             <h3>Ixlosbek</h3>
             <p class="role">15 yosh · 42-maktab, Farg'ona</p>
             <ul class="facts">
-              <li><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg> Kiberxavfsizlikka qiziqadi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-divide"/></svg> Maktabda eng yoqqan fan — matematika</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-trending-up"/></svg> Maqsad: iqtisodiyot bo'yicha mutaxassis bo'lish</li>
+              <li><span>🛡️</span> Kiberxavfsizlikka qiziqadi</li>
+              <li><span>➗</span> Maktabda eng yoqqan fan — matematika</li>
+              <li><span>📈</span> Maqsad: iqtisodiyot bo'yicha mutaxassis bo'lish</li>
             </ul>
             <div class="tags"><span>#kiberxavfsizlik</span><span>#matematika</span><span>#iqtisod</span></div>
           </article>
 
           <article class="person reveal tilt">
-            <div class="avatar av-green"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></div>
+            <div class="avatar av-green"><span>👨‍💻</span></div>
             <h3>Islombek</h3>
             <p class="role">11 yosh · 9-maktab, Farg'ona</p>
             <ul class="facts">
-              <li><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg> Dasturlashga qiziqadi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-stethoscope"/></svg> Dadasi tibbiyotdagi DMED loyihasida ishlaydi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-heart-handshake"/></svg> Maqsad: kompyuterni o'rganib, dadasiga yordam berish</li>
+              <li><span>👨‍💻</span> Dasturlashga qiziqadi</li>
+              <li><span>🏥</span> Dadasi tibbiyotdagi DMED loyihasida ishlaydi</li>
+              <li><span>🤝</span> Maqsad: kompyuterni o'rganib, dadasiga yordam berish</li>
             </ul>
             <div class="tags"><span>#dasturlash</span><span>#DMED</span><span>#yordam</span></div>
           </article>
 
           <article class="person reveal tilt">
-            <span class="new-badge"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg> Yangi</span>
-            <div class="avatar av-teal"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg></div>
+            <span class="new-badge">Yangi ✨</span>
+            <div class="avatar av-teal"><span>🌍</span></div>
             <h3>Shukrona</h3>
             <p class="role">15 yosh · 28-maktab, Farg'ona</p>
             <ul class="facts">
-              <li><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg> Eng qiziqqan fani — ingliz tili</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg> IT sohasida o'z yo'nalishini tanlamoqchi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-user-plus"/></svg> Guruhimizga yangi qo'shildi</li>
+              <li><span>🗣️</span> Eng qiziqqan fani — ingliz tili</li>
+              <li><span>🧭</span> IT sohasida o'z yo'nalishini tanlamoqchi</li>
+              <li><span>🤝</span> Guruhimizga yangi qo'shildi</li>
             </ul>
             <div class="tags"><span>#ingliztili</span><span>#IT</span><span>#yo'nalish</span></div>
           </article>
 
           <article class="person mentor reveal tilt">
-            <div class="avatar av-orange"><svg class="ic" aria-hidden="true"><use href="#i-graduation-cap"/></svg></div>
+            <div class="avatar av-orange"><span>🎓</span></div>
             <h3>Ilhomjon Ibragimov</h3>
             <p class="role">Ustoz · Codial menejeri va mentori</p>
             <ul class="facts">
-              <li><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg> 6+ yillik ta'lim va dasturlash tajribasi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-graduation-cap"/></svg> Bakalavr va magistr darajasi</li>
-              <li><svg class="ic" aria-hidden="true"><use href="#i-lightbulb"/></svg> Bolalarga IT'ni oson va qiziqarli o'rgatadi</li>
+              <li><span>⭐</span> 6+ yillik ta'lim va dasturlash tajribasi</li>
+              <li><span>🎓</span> Bakalavr va magistr darajasi</li>
+              <li><span>💡</span> Bolalarga IT'ni oson va qiziqarli o'rgatadi</li>
             </ul>
             <div class="tags"><span>#mentor</span><span>#codial</span></div>
           </article>
@@ -227,7 +180,7 @@
 
         <div class="course-progress reveal">
           <div class="cp-bar"><div class="cp-fill" id="cpFill"></div></div>
-          <span class="cp-label" id="cpLabel">Boshlang'ich nuqta</span>
+          <span class="cp-label" id="cpLabel">Boshlang'ich nuqta 🚀</span>
         </div>
 
         <div class="lessons" id="lessons"></div>
@@ -245,14 +198,14 @@
             to'g'ri va xavfsiz foydalanishni ham o'rganamiz.
           </p>
           <ul class="ai-list">
-            <li><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg><span><b>To'g'ri savol berish</b> — AI'ga aniq topshiriq yozishni o'rganamiz.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg><span><b>Formulalar va jadvallar</b> — Excel va Sheets'da AI bilan tezroq ishlaymiz.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg><span><b>G'oya va dizayn</b> — taqdimot va Canva uchun g'oyalar topamiz.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Xavfsizlik</b> — AI javobini tekshirish va shaxsiy ma'lumotni himoya qilish.</span></li>
+            <li><b>✍️ To'g'ri savol berish</b> — AI'ga aniq topshiriq yozishni o'rganamiz.</li>
+            <li><b>📊 Formulalar va jadvallar</b> — Excel va Sheets'da AI bilan tezroq ishlaymiz.</li>
+            <li><b>🎨 G'oya va dizayn</b> — taqdimot va Canva uchun g'oyalar topamiz.</li>
+            <li><b>🛡️ Xavfsizlik</b> — AI javobini tekshirish va shaxsiy ma'lumotni himoya qilish.</li>
           </ul>
         </div>
         <div class="chat reveal">
-          <div class="chat-head"><svg class="ic" aria-hidden="true"><use href="#i-bot"/></svg> AI yordamchi <span class="pulse"></span></div>
+          <div class="chat-head"><span class="pulse"></span> AI yordamchi</div>
           <div class="chat-body" id="chatBody"></div>
         </div>
       </div>
@@ -272,14 +225,14 @@
             va dasturlash asoslarini zamonaviy, qiziqarli muhitda o'rganadi. Biz ham shu yerda o'qiyapmiz!
           </p>
           <div class="features">
-            <div class="feature"><span class="f-ic"><svg class="ic" aria-hidden="true"><use href="#i-brain"/></svg></span><div><b>Mantiqiy fikrlash</b><small>Dasturlash asoslari va masala yechish</small></div></div>
-            <div class="feature"><span class="f-ic"><svg class="ic" aria-hidden="true"><use href="#i-wrench"/></svg></span><div><b>Amaliy loyihalar</b><small>Har bir mavzu real ish orqali</small></div></div>
-            <div class="feature"><span class="f-ic"><svg class="ic" aria-hidden="true"><use href="#i-puzzle"/></svg></span><div><b>Yoshga mos dastur</b><small>Tushunarli va bosqichma-bosqich</small></div></div>
-            <div class="feature"><span class="f-ic"><svg class="ic" aria-hidden="true"><use href="#i-clipboard-check"/></svg></span><div><b>Ota-onalarga hisobot</b><small>Natijalar muntazam ko'rsatiladi</small></div></div>
+            <div class="feature"><span>🧠</span><div><b>Mantiqiy fikrlash</b><small>Dasturlash asoslari va masala yechish</small></div></div>
+            <div class="feature"><span>🛠️</span><div><b>Amaliy loyihalar</b><small>Har bir mavzu real ish orqali</small></div></div>
+            <div class="feature"><span>👦</span><div><b>Yoshga mos dastur</b><small>Tushunarli va bosqichma-bosqich</small></div></div>
+            <div class="feature"><span>👨‍👩‍👦</span><div><b>Ota-onalarga hisobot</b><small>Natijalar muntazam ko'rsatiladi</small></div></div>
           </div>
           <div class="hero-btns">
-            <a href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener" class="btn btn-primary">Kursga yozilish <span class="arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
-            <a href="tel:+998996021502" class="btn btn-ghost"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> +998 99 602 15 02</a>
+            <a href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener" class="btn btn-primary">Kursga yozilish <span class="arrow">→</span></a>
+            <a href="tel:+998996021502" class="btn btn-ghost">📞 +998 99 602 15 02</a>
           </div>
         </div>
       </div>
@@ -290,37 +243,37 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Aloqa</span>
-          <h2>Keling, tanishamiz! <svg class="ic wave" aria-hidden="true"><use href="#i-hand"/></svg></h2>
+          <h2>Keling, tanishamiz! 👋</h2>
           <p>Savol, taklif yoki shunchaki salom — bemalol yozing.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact reveal">
-            <div class="avatar av-blue sm"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg></div>
+            <div class="avatar av-blue sm"><span>🛡️</span></div>
             <h3>Ixlosbek</h3>
-            <a class="c-row" href="tel:+998920931707"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> +998 92 093 17 07</a>
-            <a class="c-row" href="https://t.me/T_uzbbb" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> @T_uzbbb</a>
+            <a class="c-row" href="tel:+998920931707"><span>📞</span> +998 92 093 17 07</a>
+            <a class="c-row" href="https://t.me/T_uzbbb" target="_blank" rel="noopener"><span>✈️</span> @T_uzbbb</a>
             <button class="copy" data-copy="+998920931707">Raqamni nusxalash</button>
           </div>
           <div class="contact reveal">
-            <div class="avatar av-green sm"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></div>
+            <div class="avatar av-green sm"><span>👨‍💻</span></div>
             <h3>Islombek</h3>
-            <a class="c-row" href="tel:+998912836611"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> +998 91 283 66 11</a>
-            <a class="c-row" href="https://t.me/ibrohimovislombek" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> @ibrohimovislombek</a>
+            <a class="c-row" href="tel:+998912836611"><span>📞</span> +998 91 283 66 11</a>
+            <a class="c-row" href="https://t.me/ibrohimovislombek" target="_blank" rel="noopener"><span>✈️</span> @ibrohimovislombek</a>
             <button class="copy" data-copy="+998912836611">Raqamni nusxalash</button>
           </div>
           <div class="contact reveal">
-            <div class="avatar av-teal sm"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg></div>
+            <div class="avatar av-teal sm"><span>🌍</span></div>
             <h3>Shukrona</h3>
-            <a class="c-row" href="tel:+998993637688"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> +998 99 363 76 88</a>
+            <a class="c-row" href="tel:+998993637688"><span>📞</span> +998 99 363 76 88</a>
             <button class="copy" data-copy="+998993637688">Raqamni nusxalash</button>
           </div>
           <div class="contact reveal">
-            <div class="avatar av-orange sm"><svg class="ic" aria-hidden="true"><use href="#i-graduation-cap"/></svg></div>
+            <div class="avatar av-orange sm"><span>🎓</span></div>
             <h3>Codial · Ustoz Ilhomjon</h3>
-            <a class="c-row" href="tel:+998996021502"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> +998 99 602 15 02</a>
-            <a class="c-row" href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> @IlhomjonDeveloper</a>
-            <a class="c-row" href="https://ilhomjonibragimov.uz" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg> ilhomjonibragimov.uz</a>
+            <a class="c-row" href="tel:+998996021502"><span>📞</span> +998 99 602 15 02</a>
+            <a class="c-row" href="https://t.me/IlhomjonDeveloper" target="_blank" rel="noopener"><span>✈️</span> @IlhomjonDeveloper</a>
+            <a class="c-row" href="https://ilhomjonibragimov.uz" target="_blank" rel="noopener"><span>🌐</span> ilhomjonibragimov.uz</a>
           </div>
         </div>
       </div>
@@ -331,12 +284,12 @@
     <div class="container footer-inner">
       <img src="assets/codial-logo-white.png" alt="Codial" class="footer-logo">
       <p>© <span id="year">2026</span> Ixlosbek, Islombek & Shukrona · Codial akademiyasi, Farg'ona</p>
-      <p class="small">HTML, CSS, JS va AI yordamida mehr bilan yaratildi <svg class="ic heart" aria-hidden="true"><use href="#i-heart"/></svg></p>
+      <p class="small">HTML, CSS, JS va AI yordamida mehr bilan yaratildi 💙💚</p>
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="Yuqoriga"><svg class="ic" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
-  <div class="toast" id="toast"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> <span id="toastText">Nusxalandi</span></div>
+  <button class="to-top" id="toTop" aria-label="Yuqoriga">↑</button>
+  <div class="toast" id="toast">Nusxalandi ✔</div>
 
   <script src="script.js"></script>
 </body>
